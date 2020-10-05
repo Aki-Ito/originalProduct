@@ -1,0 +1,6 @@
+framework module Pods_originalProduct {
+  umbrella header "Pods-originalProduct-umbrella.h"
+
+  export *
+  module * { export * }
+}

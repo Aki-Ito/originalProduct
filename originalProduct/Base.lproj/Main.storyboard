@@ -35,6 +35,10 @@
                                 <rect key="frame" x="87" y="243" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vdQ-86-i5p" id="Z9d-vZ-c5R"/>
+                                    <outlet property="delegate" destination="vdQ-86-i5p" id="oU7-u9-Yru"/>
+                                </connections>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TYB-3W-fVi">
                                 <rect key="frame" x="87" y="522" width="240" height="128"/>
