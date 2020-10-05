@@ -8,7 +8,7 @@
 import UIKit
 
 class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
-
+//パーツの宣言
    @IBOutlet weak var titleTexitField: UITextField!
    @IBOutlet weak var detailTextView: UITextView!
    
@@ -22,34 +22,21 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
   
    
    // MARK: - TextField Delegate
+   //リターンキーが押された時に実行する
    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       // UITextField のファーストレスポンダをやめる（その結果、キーボードが非表示になる）
        textField.resignFirstResponder()
        return true
    }
    
    // MARK: - TextView Delegate
+    //編集が終了する直前に呼ばれるメソッド
    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
        textView.resignFirstResponder()
        return true
    }
    
    @IBAction func save() {
-       if titleTexitField.text != "" {
-           if detailTextView.text != "" {
-               let newDiary = Diary.create()
-               newDiary.title = titleTexitField.text!
-               newDiary.note = detailTextView.text
-               let today = Diary.changeDateType(date: Date())
-               newDiary.date = today
-               newDiary.save()
-               self.navigationController?.popViewController(animated: true)
-           } else {
-               SimpleAlert.showAlert(viewController: self, title: "日記なし", message: "内容を描いてください", buttonTitle: "OK")
-           }
-       } else {
-           SimpleAlert.showAlert(viewController: self, title: "タイトルなし", message: "タイトルを書いてください", buttonTitle: "OK")
-       }
-       
+    
    }
-   
 }
