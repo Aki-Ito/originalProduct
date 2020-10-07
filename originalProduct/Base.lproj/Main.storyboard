@@ -31,32 +31,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="brn-gI-ykZ" customClass="FSCalendar">
-                                <rect key="frame" x="20" y="154" width="374" height="315"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="vdQ-86-i5p" id="4hS-jY-XW6"/>
-                                    <outlet property="delegate" destination="vdQ-86-i5p" id="NpI-9r-rdU"/>
-                                </connections>
-                            </view>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cNQ-WL-mK5">
                                 <rect key="frame" x="85" y="602" width="244" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgF-ri-1vx">
-                                <rect key="frame" x="265" y="727" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="書き込み"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sU-e0-u5G">
-                                <rect key="frame" x="112" y="727" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="確認"/>
-                                <connections>
-                                    <segue destination="lSD-d2-mbA" kind="show" id="qRH-7t-Eww"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日の充実度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK9-9D-6Gb">
                                 <rect key="frame" x="150" y="542" width="104" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -64,6 +42,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0s-ll-Sls" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="143" width="374" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vdQ-86-i5p" id="EeG-mt-l2v"/>
+                                    <outlet property="delegate" destination="vdQ-86-i5p" id="MzY-Eq-HUz"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sU-e0-u5G">
+                                <rect key="frame" x="187" y="729" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="確認"/>
+                                <connections>
+                                    <action selector="checkButton" destination="vdQ-86-i5p" eventType="touchUpInside" id="dwB-6p-Abi"/>
+                                    <segue destination="lSD-d2-mbA" kind="show" id="qRH-7t-Eww"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IEc-8P-Xxg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,12 +67,13 @@
                     <navigationItem key="navigationItem" id="TmK-PY-hTV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Jx-zh-iDb">
                             <connections>
+                                <action selector="addWriteButton" destination="vdQ-86-i5p" id="AE4-XI-p5E"/>
                                 <segue destination="hcc-Ou-BKc" kind="show" id="ZG3-OU-UtH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="calendar" destination="brn-gI-ykZ" id="dVs-xs-K87"/>
+                        <outlet property="calendar" destination="u0s-ll-Sls" id="stu-tj-KAG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWl-rP-hdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -92,15 +89,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NNa-AC-Ymz">
-                                <rect key="frame" x="87" y="301" width="240" height="128"/>
+                                <rect key="frame" x="87" y="187" width="240" height="192"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="k1d-5T-CUS">
-                                <rect key="frame" x="87" y="237" width="240" height="530"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日悪かったところ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEI-h9-vmd">
+                                <rect key="frame" x="129" y="421" width="156" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ljh-qj-m0e">
+                                <rect key="frame" x="87" y="480" width="240" height="217"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -108,6 +112,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日よかったところ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPS-q6-qvc">
+                                <rect key="frame" x="129" y="117" width="156" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aev-na-EXx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -173,7 +184,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="detailTextView" destination="5z6-pv-5a1" id="m8J-U2-vUJ"/>
+                        <outlet property="badPointTextView" destination="6AE-cE-MRe" id="neq-pS-cKv"/>
+                        <outlet property="goodPointTextView" destination="5z6-pv-5a1" id="hhG-rE-RF9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLO-Yk-0ov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

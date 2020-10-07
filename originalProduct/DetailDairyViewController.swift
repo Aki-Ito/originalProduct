@@ -11,12 +11,13 @@ class DetailDairyViewController: UIViewController {
    
    var selectedDiary = Diary()
    
-   @IBOutlet weak var detailTextView: UITextView!
+   @IBOutlet weak var goodDetailTextView: UITextView!
+   @IBOutlet weak var badDetailTextView: UITextView!
 
    override func viewDidLoad() {
        super.viewDidLoad()
        
-       
+      
    }
    
 

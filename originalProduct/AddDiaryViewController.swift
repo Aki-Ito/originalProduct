@@ -6,28 +6,24 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 //パーツの宣言
-   @IBOutlet weak var titleTexitField: UITextField!
-   @IBOutlet weak var detailTextView: UITextView!
+   @IBOutlet weak var goodPointTextView: UITextView!
+   @IBOutlet weak var badPointTextView: UITextView!
    
    override func viewDidLoad() {
        super.viewDidLoad()
-       
-       titleTexitField.delegate = self
-       detailTextView.delegate = self
+            
+       goodPointTextView.delegate = self
+       badPointTextView.delegate = self
 
    }
   
    
    // MARK: - TextField Delegate
-   //リターンキーが押された時に実行する
-   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       // UITextField のファーストレスポンダをやめる（その結果、キーボードが非表示になる）
-       textField.resignFirstResponder()
-       return true
-   }
+  
    
    // MARK: - TextView Delegate
     //編集が終了する直前に呼ばれるメソッド
@@ -36,7 +32,22 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
        return true
    }
    
-   @IBAction func save() {
-    
-   }
+    @IBAction func save() {
+        //Diaryクラスのインスタンス作成
+        let newDiary = Diary()
+        //textViewの文章を代入する
+        newDiary.goodPoint = goodPointTextView.text!
+        newDiary.badPoint = badPointTextView.text!
+        
+        //インスタンスをrealmに保存する
+        do {
+            let realm = try Realm()
+            try realm.write({ () -> Void in
+                realm.add(newDiary)
+            })
+        }catch{
+            
+        }
+        
+    }
 }

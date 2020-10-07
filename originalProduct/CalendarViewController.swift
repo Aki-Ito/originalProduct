@@ -10,24 +10,36 @@ import FSCalendar
 import Realm
 import RealmSwift
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
 
-   var diaryArray: [Diary] = []
+   
    //パーツの宣言
    @IBOutlet weak var calendar: FSCalendar!
-   @IBOutlet weak var diaryTitleTableView: UITableView!
+   @IBOutlet var degreeOfEnrichmentLabel: UILabel!
+   
+    
    
    override func viewDidLoad() {
        super.viewDidLoad()
-       
+    //デリゲートの処理
+           calendar.delegate = self
+           calendar.dataSource = self
       
-       
    }
     
     override func viewWillAppear(_ animated: Bool) {
         
     }
   
+    @IBAction func sliderValue(_ sender: UISlider){
+        
+    }
     
+    @IBAction func checkButton(){
+        
+    }
     
+    @IBAction func addWriteButton(){
+        
+    }
 }
