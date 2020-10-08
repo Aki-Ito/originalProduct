@@ -10,7 +10,7 @@ import Realm
 import RealmSwift
 
 class DetailDairyViewController: UIViewController {
-   
+   //CalenderViewControllerから受け取る日付の値
     var receiveValue : Date?
 
    
