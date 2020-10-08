@@ -63,7 +63,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         let newDiary = Diary()
         newDiary.date = daySelect
         //degriiOfEnrichmentにスライダーの値を保存したいのですがうまくいきません。
-        newDiary.degreeOfEnrichment = sliderValueLabel
+        newDiary.degreeOfEnrichment = sliderValueFixed
         
         //インスタンスをrealmに保存する
         do {
@@ -76,7 +76,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         }
         
         //保存されたsliderValueの値を取り出してカレンダーでの表示の仕方を変える
-            
+        var degreeOfEnrich = Results<Diary>!
+        degreeOfEnrich = realm.objects(Diary.self)
             
         }
         
