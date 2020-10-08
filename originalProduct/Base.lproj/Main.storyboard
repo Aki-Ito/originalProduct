@@ -52,12 +52,12 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sU-e0-u5G">
-                                <rect key="frame" x="187" y="729" width="31" height="30"/>
+                                <rect key="frame" x="192" y="733" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="確認"/>
                                 <connections>
                                     <action selector="checkButton" destination="vdQ-86-i5p" eventType="touchUpInside" id="dwB-6p-Abi"/>
-                                    <segue destination="lSD-d2-mbA" kind="show" id="qRH-7t-Eww"/>
+                                    <segue destination="lSD-d2-mbA" kind="show" identifier="toDetail" id="qRH-7t-Eww"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -65,10 +65,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="TmK-PY-hTV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Jx-zh-iDb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qxP-CE-0BR">
                             <connections>
-                                <action selector="addWriteButton" destination="vdQ-86-i5p" id="AE4-XI-p5E"/>
-                                <segue destination="hcc-Ou-BKc" kind="show" id="ZG3-OU-UtH"/>
+                                <segue destination="hcc-Ou-BKc" kind="show" identifier="toAddViewController" id="Foz-SZ-Oal"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

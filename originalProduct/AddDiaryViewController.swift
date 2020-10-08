@@ -12,6 +12,8 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
 //パーツの宣言
    @IBOutlet weak var goodPointTextView: UITextView!
    @IBOutlet weak var badPointTextView: UITextView!
+    
+    var receiveValue : Date?
    
    override func viewDidLoad() {
        super.viewDidLoad()
@@ -22,10 +24,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
    }
   
    
-   // MARK: - TextField Delegate
   
-   
-   // MARK: - TextView Delegate
     //編集が終了する直前に呼ばれるメソッド
    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
        textView.resignFirstResponder()
@@ -35,6 +34,8 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     @IBAction func save() {
         //Diaryクラスのインスタンス作成
         let newDiary = Diary()
+        //渡された日付をdateにセットする
+        newDiary.date = receiveValue
         //textViewの文章を代入する
         newDiary.goodPoint = goodPointTextView.text!
         newDiary.badPoint = badPointTextView.text!

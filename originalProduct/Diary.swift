@@ -10,7 +10,7 @@ import Realm
 import RealmSwift
 
 class Diary: Object {
-    @objc dynamic var date : Date?//日付
+    @objc dynamic var date : Date!//日付
     @objc dynamic var goodPoint : String = ""
     @objc dynamic var badPoint : String = ""
     @objc dynamic var reframing : String = ""//悪いところをポジティブな言葉にリフレーミングしたやつ

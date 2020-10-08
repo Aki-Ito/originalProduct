@@ -16,7 +16,9 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
    //パーツの宣言
    @IBOutlet weak var calendar: FSCalendar!
    @IBOutlet var degreeOfEnrichmentLabel: UILabel!
-   
+   //日付を入れることのできる変数宣言をする
+    var daySelect: Date?
+    
     
    
    override func viewDidLoad() {
@@ -26,9 +28,24 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
            calendar.dataSource = self
       
    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+    //画面遷移の際の処理　
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddViewController" {
+            let addDiaryViewController: AddDiaryViewController = segue.destination as! AddDiaryViewController
+            addDiaryViewController.receiveValue = self.daySelect
+        }
         
+        if segue.identifier == "toDetail" {
+            let detailDiaryViewController: DetailDairyViewController = segue.destination as! DetailDairyViewController
+            detailDiaryViewController.receiveValue = self.daySelect
+        }
+    }
+    
+    
+    //カレンダー処理
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
+        //日付選択時に呼ばれるメソッド
+         daySelect = calendar.selectedDate
     }
   
     @IBAction func sliderValue(_ sender: UISlider){
@@ -39,7 +56,4 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
     }
     
-    @IBAction func addWriteButton(){
-        
-    }
 }
