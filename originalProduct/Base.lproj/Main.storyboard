@@ -31,12 +31,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cNQ-WL-mK5">
-                                <rect key="frame" x="85" y="602" width="244" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="cNQ-WL-mK5">
+                                <rect key="frame" x="85" y="644" width="244" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValue:" destination="vdQ-86-i5p" eventType="touchUpInside" id="cK4-5y-QHm"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日の充実度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK9-9D-6Gb">
-                                <rect key="frame" x="150" y="542" width="104" height="21"/>
+                                <rect key="frame" x="150" y="513" width="104" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -52,13 +55,25 @@
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sU-e0-u5G">
-                                <rect key="frame" x="192" y="733" width="31" height="30"/>
+                                <rect key="frame" x="296" y="753" width="31" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="確認"/>
                                 <connections>
                                     <action selector="checkButton" destination="vdQ-86-i5p" eventType="touchUpInside" id="dwB-6p-Abi"/>
                                     <segue destination="lSD-d2-mbA" kind="show" identifier="toDetail" id="qRH-7t-Eww"/>
                                 </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gG-eZ-BMr">
+                                <rect key="frame" x="186" y="585" width="42" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra8-O8-Rgr">
+                                <rect key="frame" x="87" y="753" width="123" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="充実度をチェック"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IEc-8P-Xxg"/>
@@ -73,6 +88,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="calendar" destination="u0s-ll-Sls" id="stu-tj-KAG"/>
+                        <outlet property="sliderValueLabel" destination="8gG-eZ-BMr" id="QaQ-E0-lcV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yWl-rP-hdw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

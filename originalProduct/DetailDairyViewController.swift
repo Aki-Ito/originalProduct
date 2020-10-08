@@ -24,9 +24,9 @@ class DetailDairyViewController: UIViewController {
     let dateFormatter = DateFormatter()
     // dateFormatter.dateFormat = "dd/MM/yyyy"
     dateFormatter.dateFormat = "d MMM yyyy"
-    let stringDate = dateFormatter.string(from: receiveValue)
+    //let stringDate = dateFormatter.string(from: receiveValue)
 
-    var todayEvent = realm.objects(Diary.self).filter("date = '\(stringDate)'").sorted(byKeyPath: "venue", ascending: true)
+    //var todayEvent = realm.objects(Diary.self).filter("date = '\(stringDate)'").sorted(byKeyPath: "venue", ascending: true)
 
       
    }

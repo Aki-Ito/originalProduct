@@ -16,9 +16,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
    //パーツの宣言
    @IBOutlet weak var calendar: FSCalendar!
    @IBOutlet var degreeOfEnrichmentLabel: UILabel!
+    @IBOutlet var sliderValueLabel: UILabel!
    //日付を入れることのできる変数宣言をする
     var daySelect: Date?
-    
+ 
     
    
    override func viewDidLoad() {
@@ -47,13 +48,37 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         //日付選択時に呼ばれるメソッド
          daySelect = calendar.selectedDate
     }
-  
-    @IBAction func sliderValue(_ sender: UISlider){
-        
+  //スライダーに関しての取り扱い
+    @IBAction func sliderValue(_ sender : UISlider){
+        let sliderValueFixed:Int = Int(sender.value)
+        sliderValueLabel.text = String(sliderValueFixed)
     }
     
     @IBAction func checkButton(){
         
     }
+    //今日の充実度を保存してカレンダー上での表記を変える
+    @IBAction func checkEnrichment(){
+        //Diaryクラスのインスタンスを作成
+        let newDiary = Diary()
+        newDiary.date = daySelect
+        //degriiOfEnrichmentにスライダーの値を保存したいのですがうまくいきません。
+        newDiary.degreeOfEnrichment = sliderValueLabel
+        
+        //インスタンスをrealmに保存する
+        do {
+            let realm = try Realm()
+            try realm.write({ () -> Void in
+                realm.add(newDiary)
+            })
+        }catch{
+            
+        }
+        
+        //保存されたsliderValueの値を取り出してカレンダーでの表示の仕方を変える
+            
+            
+        }
+        
     
 }
