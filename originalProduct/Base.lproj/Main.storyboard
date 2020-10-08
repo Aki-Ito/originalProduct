@@ -124,7 +124,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Z1F-tx-Lps"/>
                     <connections>
-                        <outlet property="detailTextView" destination="NNa-AC-Ymz" id="VWL-rg-Bda"/>
+                        <outlet property="badDetailTextView" destination="Ljh-qj-m0e" id="n77-ZA-VfV"/>
+                        <outlet property="goodDetailTextView" destination="NNa-AC-Ymz" id="UX0-cF-fjL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alj-Ud-sI2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
