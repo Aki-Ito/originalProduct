@@ -12,6 +12,7 @@ import RealmSwift
 class DetailDairyViewController: UIViewController {
    //CalenderViewControllerから受け取る日付の値
     var receiveValue : Date?
+    //var todayEvent: Results<Diary>!
     
    
    @IBOutlet weak var goodDetailTextView: UITextView!
@@ -21,7 +22,7 @@ class DetailDairyViewController: UIViewController {
        super.viewDidLoad()
    
     let realm = try! Realm()
-    var todayEvent = realm.objects(Diary.self).filter("date = \(receiveValue)")
+     var todayEvent = realm.objects(Diary.self).filter("date = \(receiveValue)")
     
 
       
