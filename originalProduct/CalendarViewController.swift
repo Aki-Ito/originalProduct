@@ -24,21 +24,22 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
    
    override func viewDidLoad() {
        super.viewDidLoad()
+           print(Realm.Configuration.defaultConfiguration.fileURL!)
     //デリゲートの処理
            calendar.delegate = self
            calendar.dataSource = self
-      
+           
    }
     //画面遷移の際の処理　
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddViewController" {
             let addDiaryViewController: AddDiaryViewController = segue.destination as! AddDiaryViewController
-            addDiaryViewController.receiveValue = self.daySelect
+            addDiaryViewController.receiveValue = calendar.selectedDate
         }
         
         if segue.identifier == "toDetail" {
             let detailDiaryViewController: DetailDairyViewController = segue.destination as! DetailDairyViewController
-            detailDiaryViewController.receiveValue = self.daySelect
+            detailDiaryViewController.receiveValue = calendar.selectedDate
         }
     }
     
@@ -59,27 +60,34 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     //今日の充実度を保存してカレンダー上での表記を変える
     @IBAction func checkEnrichment(){
-        //Diaryクラスのインスタンスを作成
-        let newDiary = Diary()
-        newDiary.date = daySelect
-        //degriiOfEnrichmentにスライダーの値を保存したいのですがうまくいきません。
-        newDiary.degreeOfEnrichment = sliderValueFixed
+
         
-        //インスタンスをrealmに保存する
-        do {
-            let realm = try Realm()
-            try realm.write({ () -> Void in
-                realm.add(newDiary)
-            })
-        }catch{
-            
+        // (1)Realmインスタンスの生成
+        
+        //let realm = try! Realm()
+        
+         
+        
+        // (2)クエリによるデータの取得
+        
+        //let results = realm.objects(Diary.self)
+        
+      
+        
+        // (3)データの更新
+        
+        //try! realm.write {
+        
+           
+        
         }
+
+      
         
         //保存されたsliderValueの値を取り出してカレンダーでの表示の仕方を変える
-        var degreeOfEnrich = Results<Diary>!
-        degreeOfEnrich = realm.objects(Diary.self)
+        
             
         }
         
     
-}
+
