@@ -22,7 +22,7 @@ class DetailDairyViewController: UIViewController {
        super.viewDidLoad()
    
     let realm = try! Realm()
-     var todayEvent = realm.objects(Diary.self).filter("date = \(receiveValue)")
+     var todayEvent = realm.objects(Diary.self).filter("date = \(receiveValue!)")
     
 
       

@@ -22,6 +22,9 @@
 		2CAAFCDA252AC25900744CEE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFCD9252AC25900744CEE /* CalendarViewController.swift */; };
 		2CAAFCDF252AC27A00744CEE /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFCDE252AC27A00744CEE /* AddDiaryViewController.swift */; };
 		2CAAFCE4252AC29200744CEE /* DetailDairyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFCE3252AC29200744CEE /* DetailDairyViewController.swift */; };
+		2CDEACF22530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
+		2CDEACF32530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
+		2CDEACF42530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
 		B5A51BA46B5CF81FA3626A70 /* Pods_originalProduct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B547CD1F020D704B6BBFA6 /* Pods_originalProduct.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +66,7 @@
 		2CAAFCD9252AC25900744CEE /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		2CAAFCDE252AC27A00744CEE /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		2CAAFCE3252AC29200744CEE /* DetailDairyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDairyViewController.swift; sourceTree = "<group>"; };
+		2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reframingDiaryViewController.swift; sourceTree = "<group>"; };
 		4FE962B5F567FAA4E002BCDA /* Pods-originalProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalProduct.release.xcconfig"; path = "Target Support Files/Pods-originalProduct/Pods-originalProduct.release.xcconfig"; sourceTree = "<group>"; };
 		886148F40411D8DF5255F553 /* Pods-originalProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalProductTests.debug.xcconfig"; path = "Target Support Files/Pods-originalProductTests/Pods-originalProductTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA92662D31F5584FCB21690C /* Pods-originalProductTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalProductTests.release.xcconfig"; path = "Target Support Files/Pods-originalProductTests/Pods-originalProductTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 				2CAAFCD9252AC25900744CEE /* CalendarViewController.swift */,
 				2CAAFCDE252AC27A00744CEE /* AddDiaryViewController.swift */,
 				2CAAFCE3252AC29200744CEE /* DetailDairyViewController.swift */,
+				2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */,
 			);
 			path = originalProduct;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAAFCDA252AC25900744CEE /* CalendarViewController.swift in Sources */,
+				2CDEACF22530387600B83021 /* reframingDiaryViewController.swift in Sources */,
 				2CAAFC97252ABDDB00744CEE /* ViewController.swift in Sources */,
 				2CAAFCDF252AC27A00744CEE /* AddDiaryViewController.swift in Sources */,
 				2CAAFC93252ABDDB00744CEE /* AppDelegate.swift in Sources */,
@@ -436,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDEACF32530387600B83021 /* reframingDiaryViewController.swift in Sources */,
 				2CAAFCAA252ABDDF00744CEE /* originalProductTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDEACF42530387600B83021 /* reframingDiaryViewController.swift in Sources */,
 				2CAAFCB5252ABDDF00744CEE /* originalProductUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
