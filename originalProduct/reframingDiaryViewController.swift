@@ -12,13 +12,18 @@ class reframingDiaryViewController: UIViewController {
 
     
     var receiveSecondValue : Date?
+    var receiveBadValue : String!
     @IBOutlet weak var reframingTextView : UITextView!
+    @IBOutlet var badPointLabel : UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        badPointLabel.text = receiveBadValue
         // Do any additional setup after loading the view.
     }
+    
+    
     
 
     @IBAction func save() {
