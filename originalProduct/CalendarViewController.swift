@@ -85,10 +85,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
             //保存されたdegreeOfEnrichmentの値に応じてカレンダーの日付の背景色を変える
             let realm = try! Realm()
-            
+            let result = realm.objects(Event.self).filter("date = '\(da)'")
             
             if todayEvent?.degreeOfEnrichment = String(1) || String(2) || String(3){
-                return UIColor.red
+               return UIColor.red
             }
     }
     
