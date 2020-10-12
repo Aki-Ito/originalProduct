@@ -10,9 +10,10 @@ import RealmSwift
 
 class reframingDiaryViewController: UIViewController {
 
-    
+    //addDiaryViewControllerから受け取る値
     var receiveSecondValue : Date?
     var receiveBadValue : String!
+    
     @IBOutlet weak var reframingTextView : UITextView!
     @IBOutlet var badPointLabel : UILabel!
     
@@ -27,32 +28,32 @@ class reframingDiaryViewController: UIViewController {
     
 
     @IBAction func save() {
-        //Diaryクラスのインスタンス作成
-        let newDiary = Diary()
-        //渡された日付をdateにセットする
-        newDiary.date = receiveSecondValue
-        //textViewの文章を代入する
-        newDiary.reframing = reframingTextView.text!
+        // (1)Realmインスタンスの生成
         
-        //インスタンスをrealmに保存する
-        do {
-            let realm = try Realm()
-            try realm.write({ () -> Void in
-                realm.add(newDiary)
-            })
-        }catch{
-            
-        }
+        let realm = try! Realm()
         
+        
+        
+        // (2)クエリによるデータの取得
+        var todayEvent = realm.objects(Diary.self).filter("date = %@", receiveSecondValue!).first
+        
+        
+        // (3)データの更新
+        try! realm.write({
+            todayEvent!.reframing = reframingTextView.text!
+        })
+        //2つ前の画面に戻ることのできる方法
+        navigationController?.popToViewController(navigationController!.viewControllers[0], animated: true)
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    
 }

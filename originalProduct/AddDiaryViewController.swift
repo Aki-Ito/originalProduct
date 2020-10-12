@@ -17,7 +17,7 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     var receiveValue : Date?
     //タイマーに関しての変数
     var timer: Timer = Timer()
-    var count : Float!
+    var count : Int!
     
     var badPointHandOver : String!
    
@@ -30,9 +30,9 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
    }
     //画面が現れるたびに5分間のタイマーが起動する
     override func viewWillAppear(_ animated: Bool) {
-        count = 5.0
+        count = 300
         if !timer.isValid{
-            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.down), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.down), userInfo: nil, repeats: true)
         }
     }
     
@@ -60,11 +60,14 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     //タイマーが起動している際に実行されるメソッド
     @objc func down(){
-        count = count - 0.01
-        timerLabel.text = String(format: "%.2f", count)
+        count = count - 1
+        timerLabel.text = String(count)
         if count < 0&&timer.isValid{
             timer.invalidate()
+            //時間が経ったら自動的に画面遷移されるようにする
+            self.performSegue(withIdentifier: "toReframe", sender: nil)
         }
+        
     }
    
     @IBAction func save() {
