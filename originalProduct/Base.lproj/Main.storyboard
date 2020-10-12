@@ -82,7 +82,7 @@
                     <navigationItem key="navigationItem" id="TmK-PY-hTV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qxP-CE-0BR">
                             <connections>
-                                <segue destination="hcc-Ou-BKc" kind="show" identifier="toAddViewController" id="a6m-kM-9rQ"/>
+                                <segue destination="hcc-Ou-BKc" kind="show" identifier="toAdd" id="a6m-kM-9rQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

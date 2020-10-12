@@ -31,7 +31,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     //画面遷移の際の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toAddViewController" {
+        if segue.identifier == "toAdd" {
             let addDiaryViewController: AddDiaryViewController = segue.destination as! AddDiaryViewController
             addDiaryViewController.receiveValue = calendar.selectedDate
         }
