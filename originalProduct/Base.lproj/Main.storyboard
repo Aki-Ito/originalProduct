@@ -82,7 +82,7 @@
                     <navigationItem key="navigationItem" id="TmK-PY-hTV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qxP-CE-0BR">
                             <connections>
-                                <segue destination="hcc-Ou-BKc" kind="show" identifier="toAddViewController" id="Foz-SZ-Oal"/>
+                                <segue destination="hcc-Ou-BKc" kind="show" identifier="toAddViewController" id="a6m-kM-9rQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -200,14 +200,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDL-yS-qbu">
-                                <rect key="frame" x="194" y="709" width="31" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="次へ"/>
-                                <connections>
-                                    <segue destination="Hlx-W9-Uhe" kind="show" identifier="toReframe" id="ap4-fv-luR"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6AE-cE-MRe">
                                 <rect key="frame" x="87" y="546" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -223,7 +215,7 @@
                     <navigationItem key="navigationItem" id="2TJ-9M-Fey">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="RS0-lf-p2o">
                             <connections>
-                                <action selector="save" destination="hcc-Ou-BKc" id="1yP-zl-PKn"/>
+                                <action selector="save" destination="hcc-Ou-BKc" id="wzs-K4-fJW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -231,6 +223,7 @@
                         <outlet property="badPointTextView" destination="6AE-cE-MRe" id="neq-pS-cKv"/>
                         <outlet property="goodPointTextView" destination="5z6-pv-5a1" id="hhG-rE-RF9"/>
                         <outlet property="timerLabel" destination="YPD-mm-QsA" id="aBZ-YT-jxU"/>
+                        <segue destination="Hlx-W9-Uhe" kind="show" identifier="toReframe" id="9UH-GY-b4I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLO-Yk-0ov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -267,7 +260,7 @@
                     <navigationItem key="navigationItem" id="YU0-OF-yO2">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="mY5-E4-G8A">
                             <connections>
-                                <action selector="save" destination="Hlx-W9-Uhe" id="WGa-Bp-l2n"/>
+                                <action selector="save" destination="Hlx-W9-Uhe" id="M3h-ej-qw5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

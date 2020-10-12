@@ -4,7 +4,6 @@
 //
 //  Created by 伊藤明孝 on 2020/10/05.
 //
-
 import UIKit
 import FSCalendar
 import Realm
@@ -30,7 +29,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.dataSource = self
         
     }
-    //画面遷移の際の処理　
+    //画面遷移の際の処理
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAddViewController" {
             let addDiaryViewController: AddDiaryViewController = segue.destination as! AddDiaryViewController
@@ -85,6 +84,3 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     
 }
-
-
-

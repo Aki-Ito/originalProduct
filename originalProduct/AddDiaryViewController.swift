@@ -4,7 +4,6 @@
 //
 //  Created by 伊藤明孝 on 2020/10/05.
 //
-
 import UIKit
 import RealmSwift
 
@@ -42,8 +41,8 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
             let reframeViewController : reframingDiaryViewController = segue.destination as! reframingDiaryViewController
             reframeViewController.receiveBadValue = self.badPointHandOver
             
-            let reframeSecondViewController : reframingDiaryViewController = segue.destination as! reframingDiaryViewController
-            reframeSecondViewController.receiveSecondValue = self.receiveValue
+          
+            reframeViewController.receiveSecondValue = self.receiveValue
         }
         
         
@@ -89,6 +88,6 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
         }catch{
             
         }
-        
+        self.performSegue(withIdentifier: "toReframe" , sender: self)
     }
 }
