@@ -30,6 +30,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
     }
     //画面遷移の際の処理
+    //カレンダーのセルを押さずに遷移してもアプリが落ちないようにする必要がある。
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAdd" {
             let addDiaryViewController: AddDiaryViewController = segue.destination as! AddDiaryViewController
