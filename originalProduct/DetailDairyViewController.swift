@@ -29,7 +29,22 @@ class DetailDairyViewController: UIViewController {
     badDetailTextView.text = todayEvent.last?.badPoint
     reframingTextView.text = todayEvent.last?.reframing
     
-   
+   //テキストビューに枠線をつける
+    goodDetailTextView.layer.borderColor = UIColor.lightGray.cgColor
+    badDetailTextView.layer.borderColor = UIColor.lightGray.cgColor
+    reframingTextView.layer.borderColor = UIColor.lightGray.cgColor
+    //枠線の太さ
+    goodDetailTextView.layer.borderWidth = 0.5
+    badDetailTextView.layer.borderWidth = 0.5
+    reframingTextView.layer.borderWidth = 0.5
+    //枠を角丸にする方法
+    goodDetailTextView.layer.cornerRadius = 10.0
+    badDetailTextView.layer.cornerRadius = 10.0
+    reframingTextView.layer.cornerRadius = 10.0
+    
+    goodDetailTextView.layer.masksToBounds = true
+    badDetailTextView.layer.masksToBounds = true
+    reframingTextView.layer.masksToBounds = true
    }
     
 
