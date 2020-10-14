@@ -19,7 +19,12 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
    // @IBAction func selfAnalysis : UIButton!
     
     var daySelect: Date?
-    
+    let day = Date()
+    fileprivate lazy var dateFormatter1: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter
+    }()
    
     //最初に表示される時の処理
     override func viewDidLoad() {
@@ -29,11 +34,13 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.delegate = self
         calendar.dataSource = self
         
+        
+        calendar.select(self.dateFormatter1.date(from: "2020/10/03"))
     }
     //画面遷移の際の処理
     //カレンダーのセルを押さずに遷移してもアプリが落ちないようにする必要がある。
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toAdd" {
+        if segue.identifier == "toAdd"{
             let addDiaryViewController: AddDiaryViewController = segue.destination as! AddDiaryViewController
             addDiaryViewController.receiveValue = calendar.selectedDate
         }
@@ -45,9 +52,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     
     
-    //カレンダー処理
+    //カレンダーがタップされた時の処理
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         daySelect = calendar.selectedDate
+        
         //calendar.allowsMultipleSelection = true//.allowsMultipleSelectionで複数セルを選択できるようになる
     }
     
@@ -57,9 +65,29 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         sliderValueLabel.text = String(sliderValueFixed)
     }
     
-    @IBAction func checkButton(){
-        
-    }
+    
+    
+  
+
+//   @IBAction func addButton(){
+//        if calendar.selectedDate == nil{
+//           let alert : UIAlertController = UIAlertController(title: "警告", message: "日付を選択してください", preferredStyle: .alert)
+//
+//          alert.addAction(
+//            UIAlertAction(
+//              title: "OK",
+//            style: .default,
+//                handler: { action in
+//                    print("ボタンが押されました")
+//                 }
+//               )
+//            )
+//            present(alert, animated: true, completion: nil)
+//        }else{
+//            self.performSegue(withIdentifier: "toAdd", sender: nil)
+//        }
+//    }
+//
     //今日の充実度を保存してカレンダー上での表記を変える
     @IBAction func checkEnrichment(){
         
@@ -83,19 +111,15 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
        
     }
     
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+    @IBAction func checkButton(){
+        
+    }
+ func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+//         let realm = try! Realm()
+//         let select = realm.objects(Diary.self).filter("degreeOfEnrichment==1")
 //
-//        var colorSelect : Results<Diary>!
-//
-//        do {
-//            let realm = try! Realm()
-//
-//            colorSelect = realm.objects(Diary.self)
-//        }
-//
-//
-//        return appearance.selectionColor
-//    }
+         return UIColor.purple
+ }
    
     
 ////    fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)

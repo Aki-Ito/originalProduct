@@ -39,7 +39,7 @@
                                 </connections>
                             </slider>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u0s-ll-Sls" customClass="FSCalendar">
-                                <rect key="frame" x="20" y="143" width="374" height="340"/>
+                                <rect key="frame" x="0.0" y="143" width="414" height="340"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
@@ -47,6 +47,13 @@
                                     <outlet property="delegate" destination="vdQ-86-i5p" id="MzY-Eq-HUz"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日の充実度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gG-eZ-BMr">
+                                <rect key="frame" x="141" y="561" width="133" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ra8-O8-Rgr">
                                 <rect key="frame" x="87" y="709" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -61,21 +68,14 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sU-e0-u5G">
-                                <rect key="frame" x="296" y="709" width="31" height="30"/>
+                                <rect key="frame" x="296" y="703" width="31" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="確認"/>
                                 <connections>
-                                    <action selector="checkButton" destination="vdQ-86-i5p" eventType="touchUpInside" id="dwB-6p-Abi"/>
-                                    <segue destination="lSD-d2-mbA" kind="show" identifier="toDetail" id="qRH-7t-Eww"/>
+                                    <action selector="checkButton" destination="vdQ-86-i5p" eventType="touchUpInside" id="Sq8-82-M9M"/>
+                                    <segue destination="lSD-d2-mbA" kind="show" identifier="toDetail" id="73Y-iL-FWD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="今日の充実度" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gG-eZ-BMr">
-                                <rect key="frame" x="141" y="561" width="133" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IEc-8P-Xxg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,7 +83,8 @@
                     <navigationItem key="navigationItem" id="TmK-PY-hTV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qxP-CE-0BR">
                             <connections>
-                                <segue destination="hcc-Ou-BKc" kind="show" identifier="toAdd" id="a6m-kM-9rQ"/>
+                                <action selector="addButton" destination="vdQ-86-i5p" id="9o3-GM-XWz"/>
+                                <segue destination="hcc-Ou-BKc" kind="show" identifier="toAdd" id="hVp-7H-POL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -224,7 +225,7 @@
                         <outlet property="badPointTextView" destination="6AE-cE-MRe" id="neq-pS-cKv"/>
                         <outlet property="goodPointTextView" destination="5z6-pv-5a1" id="hhG-rE-RF9"/>
                         <outlet property="timerLabel" destination="YPD-mm-QsA" id="aBZ-YT-jxU"/>
-                        <segue destination="Hlx-W9-Uhe" kind="show" identifier="toReframe" id="9UH-GY-b4I"/>
+                        <segue destination="Hlx-W9-Uhe" kind="show" identifier="toReframe" id="1Qo-ny-85E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLO-Yk-0ov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

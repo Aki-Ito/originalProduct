@@ -18,7 +18,11 @@ class reframingDiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //textViewの枠線の設定
+        reframingTextView.layer.borderColor = UIColor.lightGray.cgColor
+        reframingTextView.layer.borderWidth = 0.5
+        reframingTextView.layer.masksToBounds = true
+        
         badPointLabel.text = receiveBadValue
         // Do any additional setup after loading the view.
         let center = UNUserNotificationCenter.current()
@@ -29,9 +33,6 @@ class reframingDiaryViewController: UIViewController {
         
     }
     
-    
-    
-
     @IBAction func save() {
         // (1)Realmインスタンスの生成
         
