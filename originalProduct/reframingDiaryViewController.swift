@@ -41,7 +41,7 @@ class reframingDiaryViewController: UIViewController {
         
         
         // (2)クエリによるデータの取得
-        var todayEvent = realm.objects(Diary.self).filter("date = %@", receiveSecondValue!).first
+        var todayEvent = realm.objects(Diary.self).filter("date = %@", receiveSecondValue!).last
         
         
         // (3)データの更新

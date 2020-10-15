@@ -88,38 +88,44 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 //        }
 //    }
 //
+    
+    @IBAction func checkButton(){
+        
+    }
     //今日の充実度を保存してカレンダー上での表記を変える
     @IBAction func checkEnrichment(){
         
-        
-      
-        
         let realm = try! Realm()
         
-        
-        
         // (2)クエリによるデータの取得
-        var todayEvent = realm.objects(Diary.self).filter("date = %@", daySelect!).first
-        
-        
+        var todayEvent = realm.objects(Diary.self).filter("date = %@", daySelect!).last
         // (3)データの更新
         try! realm.write({
             todayEvent?.degreeOfEnrichment = sliderValueLabel.text!
         })
         
-        //保存されたsliderValueLabel.textの値に応じてカレンダーの表示を変更できるようにする
-       
     }
     
-    @IBAction func checkButton(){
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+         let realm = try! Realm()
         
+        var selectColor = realm.objects(Diary.self).filter("degreeOfEnrichment = %@")
+        
+        if selectColor!.degreeOfEnrichment = "1"{
+            return UIColor.red
+        }
     }
- func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+// func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
 //         let realm = try! Realm()
-//         let select = realm.objects(Diary.self).filter("degreeOfEnrichment==1")
 //
-         return UIColor.purple
- }
+//    //var will = realm.objects(Diary.self).filter().first
+//
+//    
+//
+//
+//
+//         return UIColor.purple
+// }
    
     
 ////    fileprivate let gregorian: Calendar = Calendar(identifier: .gregorian)
