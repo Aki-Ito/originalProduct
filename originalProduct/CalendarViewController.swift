@@ -102,7 +102,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             todayEvent?.degreeOfEnrichment = sliderValueLabel.text!
         })
         
-        
+        calendar.reloadData()
     }
     
    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
@@ -116,7 +116,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             return UIColor.white
        }
             
-       calendar.reloadData()
+      
  }
 // func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
 //         let realm = try! Realm()
