@@ -30,7 +30,11 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
    
     //最初に表示される時の処理
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
+        
+        
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         //デリゲートの処理
         calendar.delegate = self
@@ -98,6 +102,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             todayEvent?.degreeOfEnrichment = sliderValueLabel.text!
         })
         
+        
     }
     
    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
@@ -111,6 +116,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             return UIColor.white
        }
             
+       calendar.reloadData()
  }
 // func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
 //         let realm = try! Realm()
