@@ -39,7 +39,9 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         //デリゲートの処理
         calendar.delegate = self
         calendar.dataSource = self
-        calendar.select(self.dateFormatter1.date(from: "2020/10/03"))
+        if daySelect == nil{
+        calendar.select(self.dateFormatter1.date(from: "2020/10/04"))
+        }
         daySelect = calendar.selectedDate
         
         // ボタンの装飾
@@ -75,7 +77,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     //カレンダーがタップされた時の処理
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
         
-        
+        daySelect = calendar.selectedDate
         //calendar.allowsMultipleSelection = true//.allowsMultipleSelectionで複数セルを選択できるようになる
     }
     
