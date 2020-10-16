@@ -107,7 +107,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             saveColor.degreeOfEnrichment = sliderValueLabel.text!
             
             do {
-                let realm = try Realm()
                 try realm.write({ () -> Void in
                     realm.add(saveColor)
                 })
@@ -131,6 +130,24 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 
        if selectColor?.degreeOfEnrichment == "1"{
             return UIColor.red
+       }else if selectColor?.degreeOfEnrichment == "2"{
+            return UIColor.red
+       }else if selectColor?.degreeOfEnrichment == "3"{
+            return UIColor.red
+       }else if selectColor?.degreeOfEnrichment == "4"{
+            return UIColor.yellow
+       }else if selectColor?.degreeOfEnrichment == "5"{
+            return UIColor.yellow
+       }else if selectColor?.degreeOfEnrichment == "6"{
+            return UIColor.yellow
+       }else if selectColor?.degreeOfEnrichment == "7"{
+            return UIColor.green
+       }else if selectColor?.degreeOfEnrichment == "8"{
+            return UIColor.green
+       }else if selectColor?.degreeOfEnrichment == "9"{
+            return UIColor.green
+       }else if selectColor?.degreeOfEnrichment == "10"{
+            return UIColor.green
        }else{
             return UIColor.white
        }
