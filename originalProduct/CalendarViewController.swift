@@ -16,10 +16,12 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet var degreeOfEnrichmentLabel: UILabel!
     @IBOutlet var sliderValueLabel: UILabel!
+    
+    @IBOutlet weak var checkDiaryButton: UIButton!
+    @IBOutlet weak var enrichmentButton: UIButton!
    // @IBAction func selfAnalysis : UIButton!
     
     var daySelect: Date?
-    let day = Date()
     fileprivate lazy var dateFormatter1: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
@@ -33,9 +35,23 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         //デリゲートの処理
         calendar.delegate = self
         calendar.dataSource = self
-        
-        
         calendar.select(self.dateFormatter1.date(from: "2020/10/03"))
+        daySelect = calendar.selectedDate
+        
+        // ボタンの装飾
+        let rgba = UIColor(red: 255/255, green: 128/255, blue: 168/255, alpha: 1.0) // ボタン背景色設定
+        checkDiaryButton.backgroundColor = rgba                                               // 背景色
+        checkDiaryButton.layer.borderWidth = 0.5                                              // 枠線の幅
+        checkDiaryButton.layer.borderColor = UIColor.black.cgColor                            // 枠線の色
+        checkDiaryButton.layer.cornerRadius = 5.0                                             // 角丸のサイズ
+        checkDiaryButton.setTitleColor(UIColor.white, for: UIControl.State.normal)             // タイトルの色
+        
+        enrichmentButton.backgroundColor = rgba                                               // 背景色
+        enrichmentButton.layer.borderWidth = 0.5                                              // 枠線の幅
+        enrichmentButton.layer.borderColor = UIColor.black.cgColor                            // 枠線の色
+        enrichmentButton.layer.cornerRadius = 5.0                                             // 角丸のサイズ
+        enrichmentButton.setTitleColor(UIColor.white, for: UIControl.State.normal)             // タイトルの色
+        
     }
     //画面遷移の際の処理
     //カレンダーのセルを押さずに遷移してもアプリが落ちないようにする必要がある。
@@ -54,7 +70,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     //カレンダーがタップされた時の処理
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition){
-        daySelect = calendar.selectedDate
+        
         
         //calendar.allowsMultipleSelection = true//.allowsMultipleSelectionで複数セルを選択できるようになる
     }
@@ -66,28 +82,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     
     
-    
-  
-
-//   @IBAction func addButton(){
-//        if calendar.selectedDate == nil{
-//           let alert : UIAlertController = UIAlertController(title: "警告", message: "日付を選択してください", preferredStyle: .alert)
-//
-//          alert.addAction(
-//            UIAlertAction(
-//              title: "OK",
-//            style: .default,
-//                handler: { action in
-//                    print("ボタンが押されました")
-//                 }
-//               )
-//            )
-//            present(alert, animated: true, completion: nil)
-//        }else{
-//            self.performSegue(withIdentifier: "toAdd", sender: nil)
-//        }
-//    }
-//
     
     @IBAction func checkButton(){
         
@@ -107,15 +101,17 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     }
     
    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-        let realm = try! Realm()
+       let realm = try! Realm()
 
-    var selectColor = realm.objects(Diary.self).filter("date = %@").last
-    
-        if selectColor!.degreeOfEnrichment == "1"{
+    var selectColor = realm.objects(Diary.self).filter("date = %@",date).last
+
+       if selectColor?.degreeOfEnrichment == "1"{
             return UIColor.red
-       }
+       }else{
             return UIColor.white
-   }
+       }
+            
+ }
 // func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
 //         let realm = try! Realm()
 //
