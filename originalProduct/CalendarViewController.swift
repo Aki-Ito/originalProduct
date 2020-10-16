@@ -106,15 +106,16 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
     }
     
-    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
-         let realm = try! Realm()
-        
-        var selectColor = realm.objects(Diary.self).filter("degreeOfEnrichment = %@")
-        
-        if selectColor!.degreeOfEnrichment = "1"{
+   func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+        let realm = try! Realm()
+
+    var selectColor = realm.objects(Diary.self).filter("date = %@").last
+    
+        if selectColor!.degreeOfEnrichment == "1"{
             return UIColor.red
-        }
-    }
+       }
+            return UIColor.white
+   }
 // func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
 //         let realm = try! Realm()
 //

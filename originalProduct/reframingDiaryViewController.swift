@@ -21,6 +21,7 @@ class reframingDiaryViewController: UIViewController {
         //textViewの枠線の設定
         reframingTextView.layer.borderColor = UIColor.lightGray.cgColor
         reframingTextView.layer.borderWidth = 0.5
+        reframingTextView.layer.cornerRadius = 10.0
         reframingTextView.layer.masksToBounds = true
         
         badPointLabel.text = receiveBadValue

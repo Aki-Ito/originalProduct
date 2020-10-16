@@ -5,50 +5,34 @@
 //  Created by 伊藤明孝 on 2020/10/13.
 //
 
-//import UIKit
-//protocol AMRadarChartViewDataSource: AnyObject {
-//
-///// グラフの数を設定する
-//func numberOfSections(in radarChartView: AMRadarChartView) -> Int
-//
-///// 項目数を設定する（頂点の数）
-//func numberOfRows(in radarChartView: AMRadarChartView) -> Int
-//
-///// 各項目の値を設定する
-//func radarChartView(_ radarChartView: AMRadarChartView, valueForRowAtIndexPath indexPath: IndexPath) -> CGFloat
-//
-///// 各グラフの塗りつぶし色を設定する
-//func radarChartView(_ radarChartView: AMRadarChartView, fillColorForSection section: Int) -> UIColor
-//
-///// 各グラフの枠線色を設定する
-//func radarChartView(_ radarChartView: AMRadarChartView, strokeColorForSection section: Int) -> UIColor
-//
-///// 各頂点の文字を設定する
-//func radarChartView(_ radarChartView: AMRadarChartView, titleForVertexInRow row: Int) -> String
-//
-///// 各頂点の文字フォントを設定する
-//func radarChartView(_ radarChartView: AMRadarChartView, fontForVertexInRow row: Int) -> UIFont
-//
-///// 各頂点の文字色を設定する
-//func radarChartView(_ radarChartView: AMRadarChartView, textColorForVertexInRow row: Int) -> UIColor
-//}
-//class AMRadarChartViewController: UIViewController {
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
-//
-//
-//    /*
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//    }
-//    */
-//
-//}
+import UIKit
+import Charts
+import Realm
+import RealmSwift
+
+
+class AMRadarChartViewController: UIViewController {
+    @IBOutlet weak var barChartView: BarChartView!
+
+    override func viewDidLoad() {
+        let rawData: [Int] = [20, 50, 70, 30, 60, 90, 40]
+        let entries = rawData.enumerated().map { BarChartDataEntry(x: Double($0.offset), y: Double($0.element)) }
+        let dataSet = BarChartDataSet(entries: entries)
+        let data = BarChartData(dataSet: dataSet)
+        barChartView.data = data
+        
+        // X軸のラベルの位置を下に設定
+        barChartView.xAxis.labelPosition = .bottom
+        // X軸のラベルの色を設定
+        barChartView.xAxis.labelTextColor = .systemGray
+        // X軸の線、グリッドを非表示にする
+        barChartView.xAxis.drawGridLinesEnabled = false
+        barChartView.xAxis.drawAxisLineEnabled = false
+        
+        // 右側のY座標軸は非表示にする
+        barChartView.rightAxis.enabled = false
+    }
+  
+    
+   
+}

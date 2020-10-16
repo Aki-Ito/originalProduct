@@ -20,19 +20,31 @@ class AddDiaryViewController: UIViewController, UITextFieldDelegate, UITextViewD
     
     var badPointHandOver : String!
    
-   override func viewDidLoad() {
-       super.viewDidLoad()
-            
-       goodPointTextView.delegate = self
-       badPointTextView.delegate = self
-
-   }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        goodPointTextView.delegate = self
+        badPointTextView.delegate = self
+        
+        
+        goodPointTextView.layer.borderColor = UIColor.lightGray.cgColor
+        goodPointTextView.layer.borderWidth = 0.5
+        goodPointTextView.layer.cornerRadius = 10.0
+        goodPointTextView.layer.masksToBounds = true
+        
+        badPointTextView.layer.borderColor = UIColor.lightGray.cgColor
+        badPointTextView.layer.borderWidth = 0.5
+        badPointTextView.layer.cornerRadius = 10.0
+        badPointTextView.layer.masksToBounds = true
+    }
     //画面が現れるたびに5分間のタイマーが起動する
     override func viewWillAppear(_ animated: Bool) {
         count = 300
         if !timer.isValid{
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.down), userInfo: nil, repeats: true)
         }
+        
+       
     }
     
     //画面遷移の際の処理 reframingViewControllerに遷移する際の処理

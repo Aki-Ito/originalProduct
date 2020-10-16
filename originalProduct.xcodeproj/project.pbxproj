@@ -23,6 +23,7 @@
 		2CAAFCDF252AC27A00744CEE /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFCDE252AC27A00744CEE /* AddDiaryViewController.swift */; };
 		2CAAFCE4252AC29200744CEE /* DetailDairyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFCE3252AC29200744CEE /* DetailDairyViewController.swift */; };
 		2CC0E1832535BD8400971253 /* AMRadarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0E1822535BD8400971253 /* AMRadarChartViewController.swift */; };
+		2CC0E19D253868A300971253 /* 375193_s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CC0E19C253868A200971253 /* 375193_s.jpg */; };
 		2CDEACF22530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
 		2CDEACF32530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
 		2CDEACF42530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
@@ -68,6 +69,7 @@
 		2CAAFCDE252AC27A00744CEE /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		2CAAFCE3252AC29200744CEE /* DetailDairyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDairyViewController.swift; sourceTree = "<group>"; };
 		2CC0E1822535BD8400971253 /* AMRadarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMRadarChartViewController.swift; sourceTree = "<group>"; };
+		2CC0E19C253868A200971253 /* 375193_s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 375193_s.jpg; sourceTree = "<group>"; };
 		2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reframingDiaryViewController.swift; sourceTree = "<group>"; };
 		4FE962B5F567FAA4E002BCDA /* Pods-originalProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalProduct.release.xcconfig"; path = "Target Support Files/Pods-originalProduct/Pods-originalProduct.release.xcconfig"; sourceTree = "<group>"; };
 		886148F40411D8DF5255F553 /* Pods-originalProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalProductTests.debug.xcconfig"; path = "Target Support Files/Pods-originalProductTests/Pods-originalProductTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		2CAAFC91252ABDDB00744CEE /* originalProduct */ = {
 			isa = PBXGroup;
 			children = (
+				2CC0E19C253868A200971253 /* 375193_s.jpg */,
 				2CAAFC92252ABDDB00744CEE /* AppDelegate.swift */,
 				2CAAFC94252ABDDB00744CEE /* SceneDelegate.swift */,
 				2CAAFC96252ABDDB00744CEE /* ViewController.swift */,
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAAFC9F252ABDDF00744CEE /* LaunchScreen.storyboard in Resources */,
+				2CC0E19D253868A300971253 /* 375193_s.jpg in Resources */,
 				2CAAFC9C252ABDDF00744CEE /* Assets.xcassets in Resources */,
 				2CAAFC9A252ABDDB00744CEE /* Main.storyboard in Resources */,
 			);
