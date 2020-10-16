@@ -95,14 +95,31 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         
         let realm = try! Realm()
         
-        // (2)クエリによるデータの取得
+       
         var todayEvent = realm.objects(Diary.self).filter("date = %@", daySelect!).last
-        // (3)データの更新
-        try! realm.write({
-            todayEvent?.degreeOfEnrichment = sliderValueLabel.text!
-        })
         
-        calendar.reloadData()
+        
+        if todayEvent == nil{
+            let saveColor = Diary()
+            
+            saveColor.degreeOfEnrichment = sliderValueLabel.text!
+            
+            do {
+                let realm = try Realm()
+                try realm.write({ () -> Void in
+                    realm.add(saveColor)
+                })
+            }catch{
+                
+            }
+            calendar.reloadData()
+        }else{
+            try! realm.write({
+                todayEvent?.degreeOfEnrichment = sliderValueLabel.text!
+            })
+            calendar.reloadData()
+        }
+        
     }
     
    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {

@@ -131,7 +131,6 @@
                     <navigationItem key="navigationItem" id="TmK-PY-hTV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="qxP-CE-0BR">
                             <connections>
-                                <action selector="addButton" destination="vdQ-86-i5p" id="9o3-GM-XWz"/>
                                 <segue destination="hcc-Ou-BKc" kind="show" identifier="toAdd" id="hVp-7H-POL"/>
                             </connections>
                         </barButtonItem>
