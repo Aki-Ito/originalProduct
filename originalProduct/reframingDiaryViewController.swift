@@ -25,6 +25,7 @@ class reframingDiaryViewController: UIViewController {
         reframingTextView.layer.masksToBounds = true
         
         badPointLabel.text = receiveBadValue
+        badPointLabel.numberOfLines = 0;
         // Do any additional setup after loading the view.
         let center = UNUserNotificationCenter.current()
         

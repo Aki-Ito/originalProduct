@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0710BC1167158B2F313E2E1E /* Pods_originalProductTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02C0EBAC98E673E249E09C39 /* Pods_originalProductTests.framework */; };
 		17875EBA84A25A0E3E0D101D /* Pods_originalProduct_originalProductUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E0EE541D4B801844A3A9D8 /* Pods_originalProduct_originalProductUITests.framework */; };
+		2C228714253BDEF100CC19B6 /* Unknown9.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C228713253BDEF100CC19B6 /* Unknown9.png */; };
 		2CAAFC93252ABDDB00744CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFC92252ABDDB00744CEE /* AppDelegate.swift */; };
 		2CAAFC95252ABDDB00744CEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFC94252ABDDB00744CEE /* SceneDelegate.swift */; };
 		2CAAFC97252ABDDB00744CEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFC96252ABDDB00744CEE /* ViewController.swift */; };
@@ -23,7 +24,6 @@
 		2CAAFCDF252AC27A00744CEE /* AddDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFCDE252AC27A00744CEE /* AddDiaryViewController.swift */; };
 		2CAAFCE4252AC29200744CEE /* DetailDairyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAFCE3252AC29200744CEE /* DetailDairyViewController.swift */; };
 		2CC0E1832535BD8400971253 /* AMRadarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC0E1822535BD8400971253 /* AMRadarChartViewController.swift */; };
-		2CC0E19D253868A300971253 /* 375193_s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2CC0E19C253868A200971253 /* 375193_s.jpg */; };
 		2CDEACF22530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
 		2CDEACF32530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
 		2CDEACF42530387600B83021 /* reframingDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */; };
@@ -31,7 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2CAAFCA6252ABDDF00744CEE /* PBXContainerItemProxy */ = {
+		2C2286F9253B510A00CC19B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2CAAFC87252ABDDB00744CEE /* Project object */;
 			proxyType = 1;
@@ -49,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		02C0EBAC98E673E249E09C39 /* Pods_originalProductTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_originalProductTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C228713253BDEF100CC19B6 /* Unknown9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown9.png; sourceTree = "<group>"; };
 		2CAAFC8F252ABDDB00744CEE /* originalProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = originalProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAAFC92252ABDDB00744CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAAFC94252ABDDB00744CEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +70,6 @@
 		2CAAFCDE252AC27A00744CEE /* AddDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewController.swift; sourceTree = "<group>"; };
 		2CAAFCE3252AC29200744CEE /* DetailDairyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDairyViewController.swift; sourceTree = "<group>"; };
 		2CC0E1822535BD8400971253 /* AMRadarChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AMRadarChartViewController.swift; sourceTree = "<group>"; };
-		2CC0E19C253868A200971253 /* 375193_s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 375193_s.jpg; sourceTree = "<group>"; };
 		2CDEACF12530387600B83021 /* reframingDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reframingDiaryViewController.swift; sourceTree = "<group>"; };
 		4FE962B5F567FAA4E002BCDA /* Pods-originalProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalProduct.release.xcconfig"; path = "Target Support Files/Pods-originalProduct/Pods-originalProduct.release.xcconfig"; sourceTree = "<group>"; };
 		886148F40411D8DF5255F553 /* Pods-originalProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-originalProductTests.debug.xcconfig"; path = "Target Support Files/Pods-originalProductTests/Pods-originalProductTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		2CAAFC91252ABDDB00744CEE /* originalProduct */ = {
 			isa = PBXGroup;
 			children = (
-				2CC0E19C253868A200971253 /* 375193_s.jpg */,
+				2C228713253BDEF100CC19B6 /* Unknown9.png */,
 				2CAAFC92252ABDDB00744CEE /* AppDelegate.swift */,
 				2CAAFC94252ABDDB00744CEE /* SceneDelegate.swift */,
 				2CAAFC96252ABDDB00744CEE /* ViewController.swift */,
@@ -228,7 +228,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2CAAFCA7252ABDDF00744CEE /* PBXTargetDependency */,
+				2C2286FA253B510A00CC19B6 /* PBXTargetDependency */,
 			);
 			name = originalProductTests;
 			productName = originalProductTests;
@@ -302,8 +302,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C228714253BDEF100CC19B6 /* Unknown9.png in Resources */,
 				2CAAFC9F252ABDDF00744CEE /* LaunchScreen.storyboard in Resources */,
-				2CC0E19D253868A300971253 /* 375193_s.jpg in Resources */,
 				2CAAFC9C252ABDDF00744CEE /* Assets.xcassets in Resources */,
 				2CAAFC9A252ABDDB00744CEE /* Main.storyboard in Resources */,
 			);
@@ -467,10 +467,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2CAAFCA7252ABDDF00744CEE /* PBXTargetDependency */ = {
+		2C2286FA253B510A00CC19B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2CAAFC8E252ABDDB00744CEE /* originalProduct */;
-			targetProxy = 2CAAFCA6252ABDDF00744CEE /* PBXContainerItemProxy */;
+			targetProxy = 2C2286F9253B510A00CC19B6 /* PBXContainerItemProxy */;
 		};
 		2CAAFCB2252ABDDF00744CEE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -621,7 +621,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = originalProduct/originalProduct.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2K446D59RQ;
@@ -644,7 +643,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = originalProduct/originalProduct.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 2K446D59RQ;
@@ -668,6 +666,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNG5L6KZNS;
 				INFOPLIST_FILE = originalProductTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -690,6 +689,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNG5L6KZNS;
 				INFOPLIST_FILE = originalProductTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -711,6 +711,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNG5L6KZNS;
 				INFOPLIST_FILE = originalProductUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -731,6 +732,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CNG5L6KZNS;
 				INFOPLIST_FILE = originalProductUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

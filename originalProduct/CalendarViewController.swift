@@ -105,6 +105,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
             let saveColor = Diary()
             
             saveColor.degreeOfEnrichment = sliderValueLabel.text!
+            saveColor.date = calendar.selectedDate!
             
             do {
                 try realm.write({ () -> Void in
