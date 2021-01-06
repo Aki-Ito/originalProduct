@@ -8,44 +8,74 @@ import UIKit
 import Realm
 import RealmSwift
 
-class DetailDairyViewController: UIViewController {
+class DetailDairyViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
    //CalenderViewControllerから受け取る日付の値
     var receiveValue : Date?
-    var todayEvent: Results<Diary>!
+    let dataList = ["goodPoint","badPoint","reframing"]
    
     
    
-   @IBOutlet weak var goodDetailTextView: UITextView!
-   @IBOutlet weak var badDetailTextView: UITextView!
-   @IBOutlet weak var reframingTextView: UITextView!
+   @IBOutlet weak var detailTextView: UITextView!
+  
+    @IBOutlet var pickerView: UIPickerView!
 
    override func viewDidLoad() {
        super.viewDidLoad()
-   
-    let realm = try! Realm()
-    var todayEvent = realm.objects(Diary.self).filter("date = %@", receiveValue!)
+    pickerView.delegate = self
+    pickerView.dataSource = self
     
-    goodDetailTextView.text = todayEvent.last?.goodPoint
-    badDetailTextView.text = todayEvent.last?.badPoint
-    reframingTextView.text = todayEvent.last?.reframing
+    //最初に表示されるようにする
+    let realm = try! Realm()
+    let firstEvent = realm.objects(Diary.self).filter("date = %@", receiveValue!)
+    detailTextView.text = firstEvent.last?.goodPoint
+   
+
     
    //テキストビューに枠線をつける
-    goodDetailTextView.layer.borderColor = UIColor.lightGray.cgColor
-    badDetailTextView.layer.borderColor = UIColor.lightGray.cgColor
-    reframingTextView.layer.borderColor = UIColor.lightGray.cgColor
-    //枠線の太さ
-    goodDetailTextView.layer.borderWidth = 0.5
-    badDetailTextView.layer.borderWidth = 0.5
-    reframingTextView.layer.borderWidth = 0.5
+      detailTextView.layer.borderColor = UIColor.lightGray.cgColor
+
     //枠を角丸にする方法
-    goodDetailTextView.layer.cornerRadius = 10.0
-    badDetailTextView.layer.cornerRadius = 10.0
-    reframingTextView.layer.cornerRadius = 10.0
-    
-    goodDetailTextView.layer.masksToBounds = true
-    badDetailTextView.layer.masksToBounds = true
-    reframingTextView.layer.masksToBounds = true
+      detailTextView.layer.cornerRadius = 10.0
+
+      detailTextView.layer.masksToBounds = true
+
    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+            return 1
+        }
+        
+        // UIPickerViewの行数、リストの数
+        func pickerView(_ pickerView: UIPickerView,
+                        numberOfRowsInComponent component: Int) -> Int {
+            return dataList.count
+        }
+        
+        // UIPickerViewの最初の表示
+        func pickerView(_ pickerView: UIPickerView,
+                        titleForRow row: Int,
+                        forComponent component: Int) -> String? {
+            
+            return dataList[row]
+        }
+        
+        // UIPickerViewのRowが選択された時の挙動
+        func pickerView(_ pickerView: UIPickerView,
+                        didSelectRow row: Int,
+                        inComponent component: Int) {
+            
+            let realm = try! Realm()
+            let todayEvent = realm.objects(Diary.self).filter("date = %@", receiveValue!)
+            
+            if row == 0{
+                detailTextView.text = todayEvent.last?.goodPoint
+            }else if row == 1{
+                detailTextView.text = todayEvent.last?.badPoint
+            }else if row == 2{
+                detailTextView.text = todayEvent.last?.reframing
+            }
+            
+        }
     
 
 }

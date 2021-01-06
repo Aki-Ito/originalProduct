@@ -15,6 +15,7 @@ class reframingDiaryViewController: UIViewController {
     
     @IBOutlet weak var reframingTextView : UITextView!
     @IBOutlet var badPointLabel : UILabel!
+    @IBOutlet var imageView : UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,8 @@ class reframingDiaryViewController: UIViewController {
         
         badPointLabel.text = receiveBadValue
         badPointLabel.numberOfLines = 0;
+        self.badPointLabel.layer.cornerRadius = 10.0
+        self.badPointLabel.clipsToBounds = true
         // Do any additional setup after loading the view.
         let center = UNUserNotificationCenter.current()
         
@@ -43,7 +46,7 @@ class reframingDiaryViewController: UIViewController {
         
         
         // (2)クエリによるデータの取得
-        var todayEvent = realm.objects(Diary.self).filter("date = %@", receiveSecondValue!).last
+        let todayEvent = realm.objects(Diary.self).filter("date = %@", receiveSecondValue!).last
         
         
         // (3)データの更新
@@ -62,7 +65,7 @@ class reframingDiaryViewController: UIViewController {
                // １回だけ
                //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
                // 繰り返しは60sec以上
-               let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 72000, repeats: true)
+               let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3000, repeats: true)
         
                let request = UNNotificationRequest(identifier: "Time Interval",
                                                             content: content,
