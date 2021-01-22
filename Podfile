@@ -6,8 +6,7 @@ target 'originalProduct' do
   use_frameworks!
   pod 'RealmSwift'
   pod 'FSCalendar'
-  pod 'CalculateCalendarLogic'
-  pod 'Charts' 
+  pod 'CalculateCalendarLogic' 
   # Pods for originalProduct
 
   target 'originalProductTests' do

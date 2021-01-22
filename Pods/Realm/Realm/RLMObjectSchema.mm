@@ -29,8 +29,8 @@
 #import "RLMSwiftSupport.h"
 #import "RLMUtil.hpp"
 
-#import "object_schema.hpp"
-#import "object_store.hpp"
+#import <realm/object-store/object_schema.hpp>
+#import <realm/object-store/object_store.hpp>
 
 using namespace realm;
 
@@ -174,6 +174,9 @@ using namespace realm;
         }
     }
 
+    if ([objectClass shouldIncludeInDefaultSchema] && schema.isSwiftClass && schema.properties.count == 0) {
+        @throw RLMException(@"No properties are defined for '%@'. Did you remember to mark them with '@objc' in your model?", schema.className);
+    }
     return schema;
 }
 
